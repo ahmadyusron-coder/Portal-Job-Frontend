@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="container">
+            <a class="navbar-brand" href="#">Job Portal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./detail-company.html">Account Company</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./view-job.html">Jobs</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./reporting.html">Reporting Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container my-5">
+        <div class="card">
+            <div class="card-header bg-info text-white">Account Company</div>
+            <div class="card-body">
+                <form id="addJobForm">
+                    <div class="form-group">
+                        <label for="name_company">Name Company</label>
+                        <input type="text" class="form-control" id="name_company" placeholder="PT Makers" required disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="detail_company">Detail Company</label>
+                        <textarea class="form-control" id="detail_company" rows="3" placeholder="123" required disabled></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="number">Number</label>
+                        <input type="number" class="form-control" id="number" placeholder="Enter phone number" required pattern="[0-9]+" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" class="form-control" id="country" placeholder="Enter Country" required disabled>
+                    </div>
+                    <button type="submit" class="btn btn-primary bg-info">Edit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<section class="container my-5">
+    <div class="card">
+    <div class="card-header bg-info text-white">Account User</div>
+    <div class="card-body">
+    <form id="addJobForm">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter Country" required disabled>
+        </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" placeholder="Enter Country" required disabled>
+    </div>
+    <!-- <div class="form-group">
+        <label for="major">Password</label>
+        <input type="password" class="form-control" id="major" placeholder="Enter Country" required disabled>
+    </div> -->
+    <button type="submit" class="btn btn-primary bg-info">Edit</button>
+    </form>
+    </div>
+    </div>
+</section>
+
+
+    <section class="container my-5">
+        <div class="card">
+            <div class="card-header bg-info text-white">Detail Company</div>
+            <div class="card-body">
+                <form id="addJobForm">
+                    <div class="form-group">
+                        <label for="companyName">Company Name</label>
+                        <input type="text" class="form-control" id="companyName" placeholder="Enter company name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobDetail">Detail Company</label>
+                        <textarea class="form-control" id="jobDetail" rows="3" placeholder="Enter detail company" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="companyName">Number</label>
+                        <input type="number" class="form-control" id="companyName" placeholder="Enter phone number" required pattern="[0-9]+">
+                    </div>
+                    <div class="form-group">
+                        <label for="major">Country</label>
+                        <input type="text" class="form-control" id="major" placeholder="Enter Country" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary bg-info">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2024 Job Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- <script src="index.js"></script> -->
+    <script src="detail.js"></script>
+    <script src="dashboard-company.js"></script>
+</body>
+</html>
