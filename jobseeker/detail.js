@@ -35,3 +35,47 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .catch(error => console.error('Error fetching profile data:', error));
 });
+
+
+$(document).ready(function() {
+    $('#editButton').on('click', function() {
+        // Populate the modal fields with the current values
+        $('#editName').val($('#name').val());
+        $('#editMajor').val($('#major').val());
+        $('#editAge').val($('#age').val());
+        $('#editAddress').val($('#address').val());
+        $('#editNumber').val($('#number').val());
+        $('#editExprience').val($('#exprience').val());
+        $('#editNameCompany').val($('#name_company').val());
+        $('#editFieldWork').val($('#field_work').val());
+    });
+
+    $('#saveChangesButton').on('click', function() {
+        // Save changes from modal to the main form
+        $('#name').val($('#editName').val());
+        $('#major').val($('#editMajor').val());
+        $('#age').val($('#editAge').val());
+        $('#address').val($('#editAddress').val());
+        $('#number').val($('#editNumber').val());
+        $('#exprience').val($('#editExprience').val());
+        $('#name_company').val($('#editNameCompany').val());
+        $('#field_work').val($('#editFieldWork').val());
+
+        // Close the modal
+        $('#editModal').modal('hide');
+    });
+});
+
+$(document).ready(function() {
+    $('#editButtonUser').on('click', function() {
+        $('#editUser').val($('#userName').val());
+        $('#editEmail').val($('#email').val());
+    });
+
+    $('#saveChangesButtonUser').on('click', function() {
+        $('#userName').val($('#editUser').val());
+        $('#email').val($('#editEmail').val());
+
+        $('#editModalUser').modal('hide');
+    });
+});
