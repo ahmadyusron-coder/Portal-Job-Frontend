@@ -37,9 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-$(document).ready(function() {
     $('#editButton').on('click', function() {
-        // Populate the modal fields with the current values
         $('#editName').val($('#name').val());
         $('#editMajor').val($('#major').val());
         $('#editAge').val($('#age').val());
@@ -50,8 +48,8 @@ $(document).ready(function() {
         $('#editFieldWork').val($('#field_work').val());
     });
 
+    // Save changes from modal to the main form and send PUT request to update profile
     $('#saveChangesButton').on('click', function() {
-        // Save changes from modal to the main form
         $('#name').val($('#editName').val());
         $('#major').val($('#editMajor').val());
         $('#age').val($('#editAge').val());
@@ -63,19 +61,40 @@ $(document).ready(function() {
 
         // Close the modal
         $('#editModal').modal('hide');
-    });
-});
 
-$(document).ready(function() {
-    $('#editButtonUser').on('click', function() {
-        $('#editUser').val($('#userName').val());
-        $('#editEmail').val($('#email').val());
-    });
+        // Prepare data for PUT request
+        const updatedData = {
+            name: $('#editName').val(),
+            major: $('#editMajor').val(),
+            age: $('#editAge').val(),
+            address: $('#editAddress').val(),
+            number: $('#editNumber').val(),
+            exprience: $('#editExprience').val(),
+            name_company: $('#editNameCompany').val(),
+            field_work: $('#editFieldWork').val()
+        };
 
-    $('#saveChangesButtonUser').on('click', function() {
-        $('#userName').val($('#editUser').val());
-        $('#email').val($('#editEmail').val());
+        const jobId = 2; // Replace with the actual jobseeker ID or fetch dynamically if needed
 
-        $('#editModalUser').modal('hide');
+        fetch(`/profile_jobseeker/${jobId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message); // Show success or error message
+            // Optionally update the main form fields with updated values
+            $('#name').val(updatedData.name);
+            $('#major').val(updatedData.major);
+            $('#age').val(updatedData.age);
+            $('#address').val(updatedData.address);
+            $('#number').val(updatedData.number);
+            $('#exprience').val(updatedData.exprience);
+            $('#name_company').val(updatedData.name_company);
+            $('#field_work').val(updatedData.field_work);
+        })
+        .catch(error => console.error('Error updating profile:', error));
     });
-});

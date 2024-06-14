@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then(response => response.json())
     .then(data => {
+        
         const jobs = data.company;  // Ensure this matches the structure returned by your API
         jobs.forEach(job => {
             const jobItem = document.createElement('li');
@@ -14,8 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Create job content
             const jobContent = `
+                
                 <h5>${job.name_job}</h5>
                 <p>${job.detail}</p>
+                <p><strong>Id:</strong> ${job.job_id}</p>
                 <p><strong>Experience:</strong> ${job.exprience}</p>
                 <p><strong>Date Posted:</strong> ${job.date_posted}</p>
                 <p><strong>Major:</strong> ${job.major}</p>
@@ -43,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p><strong>Created At:</strong> ${jobseeker.created_at}</p>
                     <p><strong>Updated At:</strong> ${jobseeker.updated_at}</p>
                     <p><strong>Status Jobseeker:</strong> ${jobseeker.status}</p>
-                    <p><a><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button></a></p>
+                    
                 `;
                 jobseekerItem.innerHTML = jobseekerContent;
 

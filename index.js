@@ -79,3 +79,57 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         console.error("There was a problem with the fetch operation:", error);
     });
 });
+
+document.getElementById('registerFormCompany').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the default way
+    
+    const formData = new FormData();
+    formData.append('username', document.getElementById('registerUsername').value);
+    formData.append('email', document.getElementById('registerEmail').value);
+    formData.append('password', document.getElementById('registerPassword').value);
+    
+    fetch('http://127.0.0.1:5000/register_company/', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === 'Success Create Company') {
+            document.getElementById('registerSuccessAlert').classList.remove('d-none');
+            document.getElementById('registerSuccessAlert').classList.add('show');
+        } else {
+            alert('Error: ' + (data.error || data.message));
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    });
+});
+
+document.getElementById('registerFormJobseeker').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the default way
+    
+    const formData = new FormData();
+    formData.append('username', document.getElementById('name').value);
+    formData.append('email', document.getElementById('email').value);
+    formData.append('password', document.getElementById('password').value);
+    
+    fetch('http://127.0.0.1:5000/register_jobseeker/', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === 'Success Create Jobseeker') {
+            document.getElementById('registerSuccessAlert1').classList.remove('d-none');
+            document.getElementById('registerSuccessAlert1').classList.add('show');
+        } else {
+            alert('Error: ' + (data.error || data.message));
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    });
+});

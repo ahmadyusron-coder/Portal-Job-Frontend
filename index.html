@@ -47,11 +47,11 @@
                                 aria-controls="login" aria-selected="true">Log in</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register" role="tab"
+                            <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#registerJobseeker" role="tab"
                                 aria-controls="register" aria-selected="false">Register Jobseeker</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register" role="tab"
+                            <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#registerCompany" role="tab"
                                 aria-controls="register" aria-selected="false">Register Company</a>
                         </li>
                     </ul>
@@ -82,10 +82,12 @@
                                         Log in
                                     </button>
                                 </div>
-                            </form>
+                            </form>                            
                         </div>
-                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                            <form id="registerForm">
+
+                        <div class="tab-pane fade" id="registerCompany" role="tabpanel" aria-labelledby="register-tab">
+                            
+                            <form id="registerFormCompany">
                                 <div class="alert alert-success d-none" id="registerSuccessAlert" role="alert">
                                     Registered successfully
                                 </div>
@@ -112,24 +114,25 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                            <form id="registerForm">
-                                <div class="alert alert-success d-none" id="registerSuccessAlert" role="alert">
+                        <div class="tab-pane fade" id="registerJobseeker" role="tabpanel" aria-labelledby="register-tab">
+                            
+                            <form id="registerFormJobseeker">
+                                <div class="alert alert-success d-none" id="registerSuccessAlert1" role="alert">
                                     Registered successfully
                                 </div>
                                 <div class="mb-3">
-                                    <label for="registerUsername" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="registerUsername"
+                                    <label for="name" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="name"
                                         placeholder="Enter username" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="registerEmail" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="registerEmail"
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email"
                                         placeholder="Enter car name" required />
                                 </div>
                                 <div class="mb-3">
-                                    <label for="registerPassword" class="form-label">Password</label>
-                                    <input type="tel" class="form-control" id="registerPassword"
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="tel" class="form-control" id="password"
                                         placeholder="Enter password" required>
                                 </div>
                                 <div class="text-end">

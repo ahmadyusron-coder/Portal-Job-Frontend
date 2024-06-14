@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((data) => {
       if (Array.isArray(data)) {
+        data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
         data.forEach((job) => {
           const jobItem = document.createElement("li");
           jobItem.className = "list-group-item";

@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p><strong>Exprience:</strong> ${job.exprience}</p> <!-- Change 'exprience' to 'experience' -->
                 <p><strong>Major:</strong> ${job.major}</p>
                 <p><strong>Company:</strong> ${job.company.name} (${job.company.country})</p>
+                <button type="submit" class="btn btn-primary" >Apply Job</button>
             `;
             jobItem.innerHTML = jobContent;
 
